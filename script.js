@@ -15,8 +15,7 @@ addProductButton.addEventListener("click", function () {
     // If proper values are entered for product name and product price, items are pushed to the cart and total price is updated
     cart.push({ productNameInput, productPriceInput });
     totalPrice += productPriceInput;
-    // Calling this function dynamically refreshes total price
-    updateCartDisplay();
+    updateCartDisplay(); // Calling this function dynamically refreshes total price
   } else {
     // Alert that signals if text and numbers aren't entered for values of product name and product price respectively
     alert("Please enter a valid product name and price.");
@@ -25,14 +24,13 @@ addProductButton.addEventListener("click", function () {
 
 // Function to display cart items dynamically
 function updateCartDisplay() {
-  // Variable to store cart item data
-  const cartItems = document.getElementById("cart");
-  // Clear existing cart items
-  cartItems.innerHTML = "";
+  const cartItems = document.getElementById("cart"); // Variable to store cart item data
+  cartItems.innerHTML = ""; // Clear existing cart items
+
   // forEach() method used to iterate over items added to cart
   cart.forEach((item, index) => {
-    // Each cart item is added to an a list tag (li)
-    const li = document.createElement("li");
+    const li = document.createElement("li"); // Each cart item is added to an a list tag (li)
+
     // Format for display of added product names and product prices
     li.textContent = `${
       item.productNameInput
@@ -48,8 +46,7 @@ function updateCartDisplay() {
       // Once the delete button is clicked, an item is removed from the cart and total price is updated
       totalPrice -= item.productPriceInput;
       cart.splice(index, 1);
-      // Calling this function dynamically refreshes total price
-      updateCartDisplay();
+      updateCartDisplay(); // Calling this function dynamically refreshes total price
     });
 
     // Appends the deleteProductButton as a child of the li element
