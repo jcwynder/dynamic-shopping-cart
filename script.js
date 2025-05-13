@@ -27,9 +27,9 @@ function updateCartDisplay() {
   const cartItems = document.getElementById("cart"); // Variable to store cart item data
   cartItems.innerHTML = ""; // Clear existing cart items
 
-  // forEach() method used to iterate over items added to cart
+  // forEach() method used to iterate over items in cart
   cart.forEach((item, index) => {
-    const li = document.createElement("li"); // Each cart item is added to an a list tag (li)
+    const li = document.createElement("li"); // Each cart item is added to a list tag (li)
 
     // Format for display of added product names and product prices
     li.textContent = `${
