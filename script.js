@@ -15,7 +15,7 @@ addProductButton.addEventListener("click", function () {
     // If proper values are entered for product name and product price, items are pushed to the cart and total price is updated
     cart.push({ productNameInput, productPriceInput });
     totalPrice += productPriceInput;
-    // This function dynamically refreshes total price
+    // Calling this function dynamically refreshes total price
     updateCartDisplay();
   } else {
     // Alert that signals if text and numbers aren't entered for values of product name and product price respectively
@@ -48,7 +48,7 @@ function updateCartDisplay() {
       // Once the delete button is clicked, an item is removed from the cart and total price is updated
       totalPrice -= item.productPriceInput;
       cart.splice(index, 1);
-      // This function dynamically refreshes total price
+      // Calling this function dynamically refreshes total price
       updateCartDisplay();
     });
 
@@ -63,11 +63,3 @@ function updateCartDisplay() {
   // This line of code formats the value from totalPrice to a string with two decimal places, then sets the formatted string as text content of the element reference by totalPriceSpan
   totalPriceSpan.textContent = totalPrice.toFixed(2);
 }
-
-// Function to remove an item
-//function removeItem(event) {
-//  const item = event.target.closest("li");
-//  const price = parseFloat(item.dataset.price);
-//  updateTotalPrice(-price);
-//  item.remove();
-//}
